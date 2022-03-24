@@ -54,6 +54,6 @@ userSchema.methods.comparePassword = function (tryPassword, cb) {
 
 const User = mongoose.model('User', userSchema)
 const Ticket = mongoose.model('Ticket', ticketSchema)
-const favoriteRoutes = mongoose.model('FavoriteRoutes', favoriteRoutesSchema)
+const FavoriteRoutes = mongoose.model('FavoriteRoutes', favoriteRoutesSchema)
 
-export { User, Ticket, }
+export { User, Ticket, FavoriteRoutes, }
