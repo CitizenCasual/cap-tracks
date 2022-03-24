@@ -3,7 +3,13 @@ import bcrypt from 'bcrypt'
 const SALT_ROUNDS = 6
 
 const ticketSchema = new mongoose.Schema({
-  ticketOwner: {type: Schema.Types.ObjectId, ref: 'Profile'}
+  ticketOwner: {type: Schema.Types.ObjectId, ref: 'Profile'},
+  fare: Number,
+  startStation: String,
+  endStation: String,
+  time: Date,
+}, {
+  timestamps: true,
 })
 
 const userSchema = new mongoose.Schema({
