@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema({
   googleId: String,
   password: String,
   isSenior: Boolean,
+  tickets: [ticketSchema],
   profile: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true,
