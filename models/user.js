@@ -2,11 +2,16 @@ import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
 const SALT_ROUNDS = 6
 
+const ticketSchema = new mongoose.Schema({
+  ticketOwner: 
+})
+
 const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, lowercase: true, unique: true },
   googleId: String,
   password: String,
+  isSenior: Boolean,
   profile: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true,
