@@ -13,7 +13,10 @@ const ticketSchema = new mongoose.Schema({
 })
 
 const favoriteRoutesSchema = new mongoose.Schema({
-
+  routeOwner: {type: Schema.Types.ObjectId, ref: 'Profile'},
+  routeName: String,
+  startStation: String,
+  endStation: String,
 })
 
 const userSchema = new mongoose.Schema({
