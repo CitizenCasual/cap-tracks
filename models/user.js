@@ -17,6 +17,8 @@ const favoriteRoutesSchema = new mongoose.Schema({
   routeName: String,
   startStation: String,
   endStation: String,
+}, {
+  timestamps: true,
 })
 
 const userSchema = new mongoose.Schema({
