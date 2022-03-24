@@ -12,6 +12,10 @@ const ticketSchema = new mongoose.Schema({
   timestamps: true,
 })
 
+const favoriteRoutesSchema = new mongoose.Schema({
+
+})
+
 const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, lowercase: true, unique: true },
@@ -50,5 +54,6 @@ userSchema.methods.comparePassword = function (tryPassword, cb) {
 
 const User = mongoose.model('User', userSchema)
 const Ticket = mongoose.model('Ticket', ticketSchema)
+const favoriteRoutes = mongoose.model('FavoriteRoutes', favoriteRoutesSchema)
 
-export { User, Ticket }
+export { User, Ticket, }
