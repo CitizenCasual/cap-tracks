@@ -1,9 +1,9 @@
-import mongoose from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 import bcrypt from 'bcrypt'
 const SALT_ROUNDS = 6
 
 const ticketSchema = new mongoose.Schema({
-  ticketOwner: 
+  ticketOwner: {type: Schema.Types.ObjectId, ref: 'Profile'}
 })
 
 const userSchema = new mongoose.Schema({
@@ -42,5 +42,6 @@ userSchema.methods.comparePassword = function (tryPassword, cb) {
 }
 
 const User = mongoose.model('User', userSchema)
+const Ticket = mongoose.model('Ticket', ticketSchema)
 
-export { User }
+export { User, Ticket }
